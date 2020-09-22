@@ -23,8 +23,7 @@ public class GetWeatherTest {
          *
          * Since I could not understand the question, I will be doing following verification hoping to cover mentioned scenarios
          * 1. Json schema validation
-         * 2. Comparing both responses.
-         *
+         * 2. Comparing both responses: fails because 'dt' field of every response is identical
          *
          * Note: I am creating schema for this and will be limiting 'lon','lat' and 'name' values to corresponding values of 'Udupi'. You can observe this in the schema
          *
@@ -50,6 +49,8 @@ public class GetWeatherTest {
 
         /**
          * 1. Json schema validation
+         *
+         * Note: In the json schema limiting 'lon','lat' and 'name' values to corresponding values of 'Udupi'
          */
         Boolean response1SchemaValidationStatus = JsonSchemaValid.validate(response1.getBody().asString(),"weather_city_schema.json");
         Assert.assertTrue(response1SchemaValidationStatus);
@@ -61,6 +62,7 @@ public class GetWeatherTest {
          * Comparing both values: This will fail because every weather api request has unique 'dt' field. Hence commenting
          */
 //        Assert.assertEquals(response1.getBody().asString(),response2.getBody().asString());
+
 
 
     }
