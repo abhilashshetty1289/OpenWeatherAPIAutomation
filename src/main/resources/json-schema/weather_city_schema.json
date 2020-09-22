@@ -1,0 +1,222 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "properties": {
+    "coord": {
+      "$id": "#/properties/coord",
+      "type": "object",
+      "title": "The coord schema",
+      "properties": {
+        "lon": {
+          "$id": "#/properties/coord/properties/lon",
+          "type": "number",
+          "enum": [74.75],
+          "title": "The lon schema"
+        },
+        "lat": {
+          "$id": "#/properties/coord/properties/lat",
+          "type": "number",
+          "enum": [13.35],
+          "title": "The lat schema"
+        }
+      },
+      "additionalProperties": false
+    },
+    "weather": {
+      "$id": "#/properties/weather",
+      "type": "array",
+      "title": "The weather schema",
+      "additionalItems": false,
+      "items": {
+        "$id": "#/properties/weather/items",
+        "anyOf": [
+          {
+            "$id": "#/properties/weather/items/anyOf/0",
+            "type": "object",
+            "title": "The first anyOf schema",
+            "properties": {
+              "id": {
+                "$id": "#/properties/weather/items/anyOf/0/properties/id",
+                "type": "integer",
+                "title": "The id schema"
+              },
+              "main": {
+                "$id": "#/properties/weather/items/anyOf/0/properties/main",
+                "type": "string",
+                "title": "The main schema"
+              },
+              "description": {
+                "$id": "#/properties/weather/items/anyOf/0/properties/description",
+                "type": "string",
+                "title": "The description schema"
+              },
+              "icon": {
+                "$id": "#/properties/weather/items/anyOf/0/properties/icon",
+                "type": "string",
+                "title": "The icon schema"
+              }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "base": {
+      "$id": "#/properties/base",
+      "type": "string",
+      "title": "The base schema"
+    },
+    "main": {
+      "$id": "#/properties/main",
+      "type": "object",
+      "title": "The main schema",
+      "properties": {
+        "temp": {
+          "$id": "#/properties/main/properties/temp",
+          "type": "number",
+          "title": "The temp schema"
+        },
+        "feels_like": {
+          "$id": "#/properties/main/properties/feels_like",
+          "type": "number",
+          "title": "The feels_like schema"
+        },
+        "temp_min": {
+          "$id": "#/properties/main/properties/temp_min",
+          "type": "number",
+          "title": "The temp_min schema"
+        },
+        "temp_max": {
+          "$id": "#/properties/main/properties/temp_max",
+          "type": "number",
+          "title": "The temp_max schema"
+        },
+        "pressure": {
+          "$id": "#/properties/main/properties/pressure",
+          "type": "integer",
+          "title": "The pressure schema"
+        },
+        "humidity": {
+          "$id": "#/properties/main/properties/humidity",
+          "type": "integer",
+          "title": "The humidity schema"
+        }
+      },
+      "additionalProperties": false
+    },
+    "visibility": {
+      "$id": "#/properties/visibility",
+      "type": "integer",
+      "title": "The visibility schema"
+    },
+    "wind": {
+      "$id": "#/properties/wind",
+      "type": "object",
+      "title": "The wind schema",
+      "properties": {
+        "speed": {
+          "$id": "#/properties/wind/properties/speed",
+          "type": "number",
+          "title": "The speed schema"
+        },
+        "deg": {
+          "$id": "#/properties/wind/properties/deg",
+          "type": "integer",
+          "title": "The deg schema"
+        }
+      },
+      "additionalProperties": false
+    },
+    "rain": {
+      "$id": "#/properties/rain",
+      "type": "object",
+      "title": "The rain schema",
+      "properties": {
+        "1h": {
+          "$id": "#/properties/rain/properties/1h",
+          "type": "number",
+          "title": "The 1h schema"
+        }
+      },
+      "additionalProperties": false
+    },
+    "clouds": {
+      "$id": "#/properties/clouds",
+      "type": "object",
+      "title": "The clouds schema",
+      "properties": {
+        "all": {
+          "$id": "#/properties/clouds/properties/all",
+          "type": "integer",
+          "title": "The all schema"
+        }
+      },
+      "additionalProperties": false
+    },
+    "dt": {
+      "$id": "#/properties/dt",
+      "type": "integer",
+      "title": "The dt schema"
+    },
+    "sys": {
+      "$id": "#/properties/sys",
+      "type": "object",
+      "title": "The sys schema",
+      "properties": {
+        "type": {
+          "$id": "#/properties/sys/properties/type",
+          "type": "integer",
+          "title": "The type schema"
+        },
+        "id": {
+          "$id": "#/properties/sys/properties/id",
+          "type": "integer",
+          "title": "The id schema"
+        },
+        "country": {
+          "$id": "#/properties/sys/properties/country",
+          "type": "string",
+          "title": "The country schema"
+        },
+        "sunrise": {
+          "$id": "#/properties/sys/properties/sunrise",
+          "type": "integer",
+          "title": "The sunrise schema"
+        },
+        "sunset": {
+          "$id": "#/properties/sys/properties/sunset",
+          "type": "integer",
+          "title": "The sunset schema"
+        }
+      },
+      "additionalProperties": false
+    },
+    "timezone": {
+      "$id": "#/properties/timezone",
+      "type": "integer",
+      "enum": [19800],
+      "title": "The timezone schema"
+    },
+    "id": {
+      "$id": "#/properties/id",
+      "type": "integer",
+      "enum": [1253952],
+      "title": "The id schema"
+    },
+    "name": {
+      "$id": "#/properties/name",
+      "type":"string",
+      "enum": ["Udupi"],
+      "title": "The name schema"
+    },
+    "cod": {
+      "$id": "#/properties/cod",
+      "type": "integer",
+      "enum": [200],
+      "title": "The cod schema"
+    }
+  },
+  "additionalProperties": false
+}
